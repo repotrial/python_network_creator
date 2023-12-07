@@ -1,0 +1,294 @@
+nodes:
+  disorder:
+    - 'primaryDomainId'
+    - 'created'
+    - 'dataSources'
+    - 'description'
+    - 'displayName'
+    - 'domainIds'
+    - 'icd10'
+    - 'synonyms'
+    - 'type'
+    - 'updated'
+  drug:
+    - 'primaryDomainId'
+    - 'casNumber'
+    - 'created'
+    - 'dataSources'
+    - 'description'
+    - 'displayName'
+    - 'domainIds'
+    - 'drugCategories'
+    - 'drugGroups'
+    - 'indication'
+    - 'sequence'
+    - 'synonyms'
+    - 'type'
+    - 'updated'
+    - 'inchi'
+    - 'iupacName'
+    - 'molecularFormula'
+    - 'smiles'
+  gene:
+    - 'primaryDomainId'
+    - 'approvedSymbol'
+    - 'chromosome'
+    - 'created'
+    - 'dataSources'
+    - 'description'
+    - 'displayName'
+    - 'domainIds'
+    - 'geneType'
+    - 'mapLocation'
+    - 'symbols'
+    - 'synonyms'
+    - 'type'
+    - 'updated'
+  genomic_variant:
+    - 'primaryDomainId'
+    - 'alternativeSequence'
+    - 'chromosome'
+    - 'created'
+    - 'dataSources'
+    - 'domainIds'
+    - 'position'
+    - 'referenceSequence'
+    - 'type'
+    - 'updated'
+    - 'variantType'
+  go:
+    - 'primaryDomainId'
+    - 'created'
+    - 'dataSources'
+    - 'description'
+    - 'displayName'
+    - 'domainIds'
+    - 'synonyms'
+    - 'type'
+    - 'updated'
+  pathway:
+    - 'primaryDomainId'
+    - 'created'
+    - 'dataSources'
+    - 'displayName'
+    - 'domainIds'
+    - 'species'
+    - 'taxid'
+    - 'type'
+    - 'updated'
+  phenotype:
+    - 'primaryDomainId'
+    - 'created'
+    - 'dataSources'
+    - 'description'
+    - 'displayName'
+    - 'domainIds'
+    - 'synonyms'
+    - 'type'
+    - 'updated'
+  protein:
+    - 'primaryDomainId'
+    - 'comments'
+    - 'created'
+    - 'dataSources'
+    - 'displayName'
+    - 'domainIds'
+    - 'geneName'
+    - 'sequence'
+    - 'synonyms'
+    - 'taxid'
+    - 'type'
+    - 'updated'
+  side_effect:
+    - 'primaryDomainId'
+    - 'created'
+    - 'dataSources'
+    - 'displayName'
+    - 'domainIds'
+    - 'type'
+    - 'updated'
+  signature:
+    - 'primaryDomainId'
+    - 'created'
+    - 'dataSources'
+    - 'database'
+    - 'displayName'
+    - 'domainIds'
+    - 'type'
+    - 'updated'
+  tissue:
+    - 'primaryDomainId'
+    - 'created'
+    - 'dataSources'
+    - 'displayName'
+    - 'domainIds'
+    - 'organ'
+    - 'type'
+    - 'updated'
+
+
+edges:
+  drug_has_target:
+    sourceDomainId: drug
+    targetDomainId: protein
+    actions:
+    created:
+    dataSources:
+    tags:
+    type:
+    updated:
+
+  protein_encoded_by_gene:
+    sourceDomainId: protein
+    targetDomainId: gene
+    created:
+    dataSources:
+    type:
+    updated:
+
+  gene_associated_with_disorder:
+    sourceDomainId: gene
+    targetDomainId: disorder
+    created:
+    dataSources:
+    omimFlags:
+    score:
+    type:
+    updated:
+
+  disorder_has_phenotype:
+    sourceDomainId: disorder
+    targetDomainId: phenotype
+    created:
+    dataSources:
+    type:
+    updated:
+
+  disorder_is_subtype_of_disorder:
+    sourceDomainId: disorder
+    targetDomainId: disorder
+    created:
+    dataSources:
+    type:
+    updated:
+  drug_has_contraindication:
+    sourceDomainId: drug
+    targetDomainId: disorder
+    created:
+    dataSources:
+    type:
+    updated:
+  drug_has_indication:
+    sourceDomainId: drug
+    targetDomainId: disorder
+    created:
+    dataSources:
+    type:
+    updated:
+  drug_has_side_effect:
+    sourceDomainId: drug
+    targetDomainId: side_effect
+    created:
+    dataSources:
+    maximum_frequency:
+    minimum_frequency:
+    type:
+    updated:
+  gene_expressed_in_tissue:
+    sourceDomainId: gene
+    targetDomainId: tissue
+    TPM:
+    created:
+    dataSources:
+    nTPM:
+    pTPM:
+    type:
+    updated:
+  go_is_subtype_of_go:
+    sourceDomainId: go
+    targetDomainId: go
+    created:
+    dataSources:
+    type:
+    updated:
+  molecule_similarity_molecule:
+    memberOne: drug
+    memberTwo: drug
+    created:
+    dataSources:
+    type:
+    updated:
+    maccs:
+    morgan_r1:
+    morgan_r2:
+    morgan_r3:
+    morgan_r4:
+  protein_expressed_in_tissue:
+    sourceDomainId: protein
+    targetDomainId: tissue
+    created:
+    dataSources:
+    level:
+    type:
+    updated:
+  protein_has_go_annotation:
+    sourceDomainId: protein
+    targetDomainId: go
+    created:
+    dataSources:
+    qualifiers:
+    type:
+    updated:
+  protein_has_signature:
+    sourceDomainId: protein
+    targetDomainId: signature
+    created:
+    dataSources:
+    type:
+    updated:
+  protein_in_pathway:
+    sourceDomainId: protein
+    targetDomainId: pathway
+    created:
+    dataSources:
+    type:
+    updated:
+  protein_interacts_with_protein:
+    memberOne: protein
+    memberTwo: protein
+    brainTissues:
+    created:
+    dataSources:
+    developmentStages:
+    evidenceTypes:
+    jointTissues:
+    methods:
+    subcellularLocations:
+    tissues:
+    type:
+    updated:
+  side_effect_same_as_phenotype:
+    memberOne: side_effect
+    memberTwo: phenotype
+    created:
+    dataSources:
+    type:
+    updated:
+  variant_affects_gene:
+    sourceDomainId: genomic_variant
+    targetDomainId: gene
+    created:
+    dataSources:
+    type:
+    updated:
+  variant_associated_with_disorder:
+    sourceDomainId: genomic_variant
+    targetDomainId: disorder
+    accession:
+    created:
+    dataSources:
+    effects:
+    reviewStatus:
+    type:
+    updated:
+

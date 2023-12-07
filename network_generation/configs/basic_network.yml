@@ -1,0 +1,57 @@
+network:
+  paths:
+    basename: nedrex_basic_graph
+    output_directory: networks
+    download_directory: downloads
+  nodes:
+    drug:
+  #    filter1:
+  #      attribute: primaryDomainId
+  #      operator: endswith
+  #      value: '0'
+  #    filter2:
+  #      attribute: drugCategories
+  #      operator: in
+  #      value: 'Diagnostic Agents'
+    protein:
+  #    filter1:
+  #      value: '5'
+  #      operator: in
+  #      attribute: primaryDomainId
+    disorder:
+    gene:
+  edges:
+    drug_has_target:
+  #    filter1:
+  #      attribute: sourceDomainId
+  #      operator: eq
+  #      value: 'drugbank.DB00004'
+#    gene_associated_with_disorder:
+#    protein_interacts_with_protein:
+#      filter1:
+#        attribute: dataSources
+#        operator: contains
+#        value: biogrid
+#      filter2:
+#        attribute: evidenceTypes
+#        operator: contains
+#        value: exp
+#      filter3:
+#        attribute: dataSources
+#        operator: contains
+#        value: iid
+#      filter4:
+#        attribute: evidenceTypes
+#        operator: contains
+#        value: pred
+#    disorder_has_phenotype:
+#    drug_has_side_effect:
+#    side_effect_same_as_phenotype:
+#    protein_expressed_in_tissue:
+#    disorder_is_subtype_of_disorder:
+#    variant_associated_with_disorder:
+#      filter1:
+#        attribute: effects
+#        operator: contains
+#        value: Pathogenic
+#    variant_affects_gene:
