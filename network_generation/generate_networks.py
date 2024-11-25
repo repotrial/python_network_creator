@@ -3,7 +3,7 @@ import logging
 import time
 import yaml
 
-from network_generation.utils.nedrex_utils import download_nodes, download_edges, list_edge_types, list_node_types, filter_nodes, filter_edges, \
+from utils.nedrex_utils import download_nodes, download_edges, list_edge_types, list_node_types, filter_nodes, filter_edges, \
     get_edge_node_keys_and_bidirection, node_is_gene, get_coll_attributes
 
 node_store = dict()
